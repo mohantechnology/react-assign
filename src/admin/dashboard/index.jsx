@@ -8,7 +8,10 @@ import Navbar from "./Navbar";
 // import Register from '../admin/auth/Register';
 import AccessAlarmIcon from "@mui/icons-material/AccessAlarm";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
- 
+import GridViewIcon from '@mui/icons-material/GridView';
+import PeopleAltIcon from '@mui/icons-material/PeopleAlt';
+import DiscountIcon from '@mui/icons-material/Discount';
+import LocalOfferIcon from '@mui/icons-material/LocalOffer';
 import './index.css';
 
 // const Login = React.lazy(() => import('../admin/auth/Login'));
@@ -54,27 +57,28 @@ export default  function  () {
 const sliderList = [
   {
    label: "Dashboard",
-   icon :  <AccessAlarmIcon/>,
+   icon :  <GridViewIcon/>,
    link  :"/admin/dashboard/dashboard",
   },  
   {
     label: "Client",
-    icon :  <AccessAlarmIcon/>,
+    icon :  <PeopleAltIcon/>,
     link  :"/admin/dashboard/client",
    },
    {
     label: "Coupon",
-    icon :  <AccessAlarmIcon/>,
+    icon :  <DiscountIcon/>,
     link  :"/admin/dashboard/coupon",
    },
    {
     label: "Discount Code",
-    icon :  <AccessAlarmIcon/>,
-    link  :"/admin/dashboard/client",
+    icon :  <LocalOfferIcon/>,
+    link  :"/admin/dashboard/discount-code",
    },
-   {
-    label: "Admin",
-    icon :  <AccessAlarmIcon style={{fontSize:"25px"}}/>,
-    link  :"/admin/dashboard/coupon",
-   },
+  //  {
+  //   label: "Admin",
+  //   icon :  <AccessAlarmIcon style={{fontSize:"25px"}}/>,
+  //   link  :"/admin/dashboard/admin",
+  //  },
+   
 ]

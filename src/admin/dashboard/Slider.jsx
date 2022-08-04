@@ -13,35 +13,46 @@ import "./Slider.css";
 
 function LinkBlock(props) {
   return (
-    <div
-      className={
-        "ad-sl-lb-mn-bx" + (props.data.isSelected ? " ad-sl-lb-mn-bx-selected" : "")
-      }
-      {...props}
-    >
-      <div className="ad-sl-lb-icon">{props.data.icon} </div>
-      <div className="ad-sl-lb-tl"> {props.data.label} </div>
-    </div>
+    <NavLink className="ad-nvlk" exact to={props.data.link || ""}>
+      <div
+        className={
+          "ad-sl-lb-mn-bx" +
+          (props.data.isSelected ? " ad-sl-lb-mn-bx-selected" : "")
+        }
+        {...props}
+      >
+        <div className="ad-sl-lb-icon">{props.data.icon} </div>
+        <div className="ad-sl-lb-tl"> {props.data.label} </div>
+      </div>
+    </NavLink>
   );
 }
 
 export default function ({ sliderList }) {
   const [selectedBlock, setSelectedBlock] = useState(0);
   const [blockList, setBlockList] = useState([]);
-
+  const location = useLocation();
   useEffect(() => {
-    handleBlockClick(0);
+    let currentSelectBlock = 0;
+    // find the current selected block using pathname
+    for (let i = 0; i < sliderList.length; i++) {
+      if (sliderList[i].link == location.pathname) {
+        currentSelectBlock = i;
+      }
+    }
+    handleBlockClick(currentSelectBlock);
   }, []);
 
   function handleBlockClick(currentIndex) {
-    console.log(currentIndex);
     let elemList = sliderList.map((item, index) => {
-        item.isSelected = currentIndex == index  ; 
-      return <LinkBlock
-        key={index}
-        data={item}
-        onClick={() => handleBlockClick(index)}
-      />;
+      item.isSelected = currentIndex == index;
+      return (
+        <LinkBlock
+          key={index}
+          data={item}
+          onClick={() => handleBlockClick(index)}
+        />
+      );
     });
     setBlockList(elemList);
   }
@@ -56,7 +67,6 @@ export default function ({ sliderList }) {
       </div>
 
       {blockList}
-    
     </div>
   );
 }
