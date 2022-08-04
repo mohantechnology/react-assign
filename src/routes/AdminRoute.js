@@ -13,6 +13,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 const Login = React.lazy(() => import('../admin/auth/Login'));
 const Register = React.lazy(() => import('../admin/auth/Register'));
+const Dashboard = React.lazy(() => import('../admin/dashboard'));
 
 
  
@@ -32,6 +33,9 @@ function AdminRoute() {
       <Switch> 
         <Route exact path="/admin/login" component={Login} />
         <Route exact path="/admin/register" component={Register} />
+        <Route  path="/admin/dashboard" component={Dashboard} />
+        {/* <Route exact path="/admin/dashboard/*" component={Dashboard} /> */}
+        
         <Route exact path="/*" component={PageNotFound} />
 
       </Switch>

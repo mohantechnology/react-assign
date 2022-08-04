@@ -33,7 +33,7 @@ export default function () {
       <div className="ad-lg-mnbx">
         <div>
           <div className="ad-lg-tl-bx">
-            <div className="ad-lg-tl"> Login </div>
+            <div className="ad-lg-tl"> Login  </div>
             <NavLink className="ad-nvlk" exact to={"/admin/register"}>
               Don't have an account?
             </NavLink> 
@@ -49,7 +49,7 @@ export default function () {
           <div className="ad-lg-inp-bx">
             <div className="ad-lg-inp-tl"> Password</div>
 
-            <Input placeholder="Enter Password" />
+            <Input type="password" placeholder="Enter Password" />
           </div>
 
           <div className="ad-lg-tl-bx">
