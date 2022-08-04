@@ -29,7 +29,7 @@ function AdminRoute() {
       </div>
 
       <Suspense fallback={<PageLoader/>}>
-      <Switch>
+      <Switch> 
         <Route exact path="/admin/login" component={Login} />
         <Route exact path="/admin/register" component={Register} />
         <Route exact path="/*" component={PageNotFound} />

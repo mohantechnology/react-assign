@@ -1,7 +1,7 @@
 const nodemailer = require('nodemailer');
 const {randomBytes} = require('crypto');
 
-module.exports = {
+const utilFunc = {
   sendEmail: async (receiverAddresses, subject, html) => { 
 
     // eslint-disable-next-line no-async-promise-executor
@@ -52,3 +52,5 @@ module.exports = {
   }
     
 };
+
+export default  utilFunc

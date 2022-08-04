@@ -2,15 +2,13 @@ import React from 'react';
 import { Route, Switch, Redirect  , BrowserRouter } from "react-router-dom"; 
 import PageNotFound from "./component/PageNotFound";
 import AdminRoute from "./routes/AdminRoute";
-
-
-
-
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'antd/dist/antd.css';
 
 
 function App() {
   return (
-    <div  >
+    <div  > 
       <BrowserRouter>
       <Switch>
           <Route exact path="/admin/*" component={AdminRoute}  />

@@ -1,6 +1,6 @@
 /* eslint-disable no-useless-escape */
 
-var validate ={ 
+const validate ={ 
 
     password: (input)=> {
     
@@ -145,4 +145,4 @@ var validate ={
     
   };
     
-  module.exports = validate ; 
+  export default  validate ; 
