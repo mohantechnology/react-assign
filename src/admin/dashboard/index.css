@@ -1,4 +1,5 @@
 .ad-dsbd-mn-bx{ 
     display:flex; 
-    
+    position: relative; 
+    width:100%
 }

@@ -1,0 +1,30 @@
+.ad-nvb-mn-bx{
+    height: 55px;
+    border-bottom: 1px solid rgb(226 223 223);
+    flex-basis: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding-right: 20px;
+}
+
+.ad-nvb-at-cmp-bx{
+    margin:10px;
+    margin-left: 13px;
+    margin-top: 6px;
+    width:50%; 
+    /* border:1px solid black;  */
+
+}
+
+.ad-nvb-prof-bx{
+    display:flex; 
+    align-items: center;
+    color:grey;
+    background-color: white;
+}
+.ad-nvb-prof-tl{ 
+    color: black;
+    font-size: 16px;
+    font-weight: 400;
+    margin-left: 7px;
+}

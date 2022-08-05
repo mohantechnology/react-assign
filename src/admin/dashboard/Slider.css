@@ -1,6 +1,7 @@
 .ad-sl-mn-bx {
   height: 100vh;
-  width: 200px;
+  min-width: 200px;
+  /* width:30%; */
   overflow: auto;
   /* border:1px solid black;  */
     border-right: 1px solid rgb(226 223 223);
@@ -47,19 +48,22 @@
 .ad-sl-hd-tl{
   display: flex;
   padding: 10px;
+  padding-left: 0px;
   /* margin-left: 10px; */
   font-size: 21px;
   font-weight: 500;
   width: 100%;
   /* border: 1px solid black; */
-  justify-content: space-around;
+  /* justify-content: space-around; */
   align-items: center;
-  border-bottom: 1px solid rgb(226 223 223); 
-  
+  /* border-bottom: 1px solid rg9b(226 223 223);  */
+  white-space :nowrap ;
+  margin-bottom:20px; 
 }
 
 .ad-sl-hd-tl img{
     width:40px; 
+    margin:0px 10px;
     cursor: pointer;
 }
 .ad-sl-hd-tl div{
