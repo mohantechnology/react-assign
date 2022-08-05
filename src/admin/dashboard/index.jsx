@@ -64,18 +64,23 @@ const sliderList = [
     icon: <InventoryIcon />,
     link: "/admin/dashboard/product",
   },
-
+  // {
+  //   label: "Shipping",
+  //   icon: <LocalShippingIcon />,
+  //   link: "/admin/dashboard/shipping",
+  // },
   {
     label: "Ordered",
     icon: <GavelIcon />,
     link: "/admin/dashboard/order",
   },
+
   {
-    label: "Shipping",
-    icon: <LocalShippingIcon />,
-    link: "/admin/dashboard/shipping",
+    label: "Discount Code",
+    icon: <LocalOfferIcon />,
+    link: "/admin/dashboard/discount-code",
   },
- 
+
   {
     label: "Client",
     icon: <PeopleAltIcon />,
