@@ -1,5 +1,5 @@
-import React, { useState, useEffect, Suspense } from 'react';
-import { Route, Switch,  NavLink, useLocation   } from "react-router-dom";
+import React, { useState, useEffect, Suspense } from "react";
+import { Route, Switch, NavLink, useLocation } from "react-router-dom";
 import PageNotFound from "../../component/PageNotFound";
 import PageLoader from "../../component/PageLoader";
 import Slider from "./Slider";
@@ -8,77 +8,88 @@ import Navbar from "./Navbar";
 // import Register from '../admin/auth/Register';
 import AccessAlarmIcon from "@mui/icons-material/AccessAlarm";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
-import GridViewIcon from '@mui/icons-material/GridView';
-import PeopleAltIcon from '@mui/icons-material/PeopleAlt';
-import DiscountIcon from '@mui/icons-material/Discount';
-import LocalOfferIcon from '@mui/icons-material/LocalOffer';
-import './index.css';
+import GridViewIcon from "@mui/icons-material/GridView";
+import PeopleAltIcon from "@mui/icons-material/PeopleAlt";
+import DiscountIcon from "@mui/icons-material/Discount";
+import LocalOfferIcon from "@mui/icons-material/LocalOffer";
+import InventoryIcon from "@mui/icons-material/Inventory";
+import LocalShippingIcon from "@mui/icons-material/LocalShipping";
+import GavelIcon from "@mui/icons-material/Gavel";
+
+import "./index.css";
 
 // const Login = React.lazy(() => import('../admin/auth/Login'));
-// const Register = React.lazy(() => import('../admin/auth/Register'));
-
-
- 
-
-
-export default  function  () {
- 
+const DashboardStats = React.lazy(() => import('./dahboardStats/DashboardStats'));
+//  /admin/dashboard/dahboardStats/DashboardStats.jsx
+export default function () {
   return (
     <div className="ad-dsbd-mn-bx">
       {/* dahsboard */}
 
-          <Slider sliderList={sliderList}/>
-          <Navbar/>
+      <Slider sliderList={sliderList} />
 
-          <div  className="ad-dsbd-view-mn-bx"> 
-           <Suspense fallback={<PageLoader/>}>
-          <Switch> 
-        {/* <Route exact path="/admin/login" component={Login} />
-        <Route exact path="/admin/register" component={Register} />
-        <Route exact path="/*" component={PageNotFound} /> */}
-
-      </Switch>
-      </Suspense>
-
-            </div>                          
-
-
-      <div   >
-
+      <div className="ad-dsbd-right-mn-bx">
+        <Navbar />
+        <DashboardBody />
       </div>
 
-    
-
+      <div></div>
     </div>
   );
-} 
+}
 
+function DashboardBody() {
+  return (
+    <div className="ad-dsbd-view-mn-bx">  
+      <Suspense fallback={<PageLoader />}>
+        <Switch>
+         
+         <Route exact path="/admin/dashboard/statistic" component={DashboardStats} />
+ {/* <Route exact path="/admin/register" component={Register} />
+<Route exact path="/*" component={PageNotFound} /> */}
+        </Switch>
+      </Suspense>
+    </div>
+  );
+}
 
 const sliderList = [
   {
-   label: "Dashboard",
-   icon :  <GridViewIcon/>,
-   link  :"/admin/dashboard/dashboard",
-  },  
+    label: "Dashboard",
+    icon: <GridViewIcon />,
+    link: "/admin/dashboard/statistic",
+  },
+  {
+    label: "Products",
+    icon: <InventoryIcon />,
+    link: "/admin/dashboard/product",
+  },
+
+  {
+    label: "Ordered",
+    icon: <GavelIcon />,
+    link: "/admin/dashboard/order",
+  },
+  {
+    label: "Shipping",
+    icon: <LocalShippingIcon />,
+    link: "/admin/dashboard/shipping",
+  },
+ 
   {
     label: "Client",
-    icon :  <PeopleAltIcon/>,
-    link  :"/admin/dashboard/client",
-   },
-   {
-    label: "Coupon",
-    icon :  <DiscountIcon/>,
-    link  :"/admin/dashboard/coupon",
-   },
-   {
-    label: "Discount Code",
-    icon :  <LocalOfferIcon/>,
-    link  :"/admin/dashboard/discount-code",
-   },
+    icon: <PeopleAltIcon />,
+    link: "/admin/dashboard/client",
+  },
+  // {
+  //   label: "Coupon",
+  //   icon: <DiscountIcon />,
+  //   link: "/admin/dashboard/coupon",
+  // },
+ 
   //  {
   //   label: "Admin",
   //   icon :  <AccessAlarmIcon style={{fontSize:"25px"}}/>,
   //   link  :"/admin/dashboard/admin",
   //  },
-   
-]
+];
