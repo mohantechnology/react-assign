@@ -17,10 +17,12 @@ import LocalShippingIcon from "@mui/icons-material/LocalShipping";
 import GavelIcon from "@mui/icons-material/Gavel";
 
 import "./index.css";
-
+import "./dahboardStats/DashboardStats.css";
+ 
 // const Login = React.lazy(() => import('../admin/auth/Login'));
 const DashboardStats = React.lazy(() => import('./dahboardStats/DashboardStats'));
-//  /admin/dashboard/dahboardStats/DashboardStats.jsx
+const Products = React.lazy(() => import('./products/Product'));
+//  src/admin/dashboard/products/Product.css
 export default function () {
   return (
     <div className="ad-dsbd-mn-bx">
@@ -45,6 +47,7 @@ function DashboardBody() {
         <Switch>
          
          <Route exact path="/admin/dashboard/statistic" component={DashboardStats} />
+         <Route exact path="/admin/dashboard/product" component={Products} />
  {/* <Route exact path="/admin/register" component={Register} />
 <Route exact path="/*" component={PageNotFound} /> */}
         </Switch>

@@ -33,7 +33,7 @@ export default function () {
           onSelect={onSelect}
           onSearch={handleSearch}
         >
-          <Input.Search size="large" placeholder="input here" enterButton />
+          <Input.Search size="medium" placeholder="Search Items" enterButton />
         </AutoComplete>
       </div>
 

@@ -1,5 +1,5 @@
 .ad-nvb-mn-bx{
-    height: 55px;
+    /* height: 55px; */
     border-bottom: 1px solid rgb(226 223 223);
     /* flex-basis: 100%; */
     display: flex;
@@ -14,7 +14,7 @@
 
 .ad-nvb-at-cmp-bx{
     margin:10px;
-    margin-left: 13px;
+    /* margin-left: 13px; */
     margin-top: 6px;
     width:50%; 
     /* border:1px solid black;  */

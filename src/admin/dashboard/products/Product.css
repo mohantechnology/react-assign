@@ -1,0 +1,58 @@
+.ad-dsbd-prod-item-par-bx{ 
+/*  
+    gap:40px; 
+    margin-left:10px;  */
+}
+
+.ad-dsbd-prod-item-par-bx >div {
+    margin:10px; 
+}
+
+.ad-dsbd-prod-item-par-bx >div img{
+    object-fit: contain;
+    object-position: center;
+    height: 200px;
+    margin: auto;
+    display: block;
+}
+
+.ad-dsbd-prod-item-par-bx >div .ant-card-meta-description{
+    height: 70px;
+}
+ 
+.ad-dsbd-prod-item-par-bx .ant-card-cover{
+    overflow:hidden; 
+  }
+
+ .ad-dshbd-prod-item-pr-bx{ 
+    display:flex; 
+    /* justify-content: space-between; */
+    padding:4px; 
+    flex-direction: column;
+ }
+ /* .ad-dshbd-prod-item-pr-bx> span {
+    margin-left:4px; 
+    font-weight:500 ; 
+    color:rgb(69, 68, 68);
+ } */
+ .ad-dshbd-prod-item-dis-pr{ 
+  font-size:20px;  
+  font-weight: 500;
+  color: rgb(200 19 19);
+  font-weight: 700;
+ }
+.ad-dshbd-prod-item-pr{ 
+    color: #323d3d;
+        font-size: 17px;
+  font-size:13px; 
+  font-weight: 500; 
+  
+
+}
+.ad-dshbd-prod-item-pr span{
+    
+}
+.ad-dshbd-prod-item-pr span:last-child{
+
+    text-decoration: line-through;
+}
