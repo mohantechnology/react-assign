@@ -1,6 +1,8 @@
-/* .ad-dsbd-prod-item-par-bx{ 
- 
-} */
+.ad-dsbd-prod-item-par-bx{ 
+/*  
+    gap:40px; 
+    margin-left:10px;  */
+}
 
 .ad-dsbd-prod-item-par-bx >div {
     margin: 10px 20px 20px 10px;
@@ -49,9 +51,9 @@
   
 
 }
-/* .ad-dshbd-prod-item-pr span{
+.ad-dshbd-prod-item-pr span{
     
-} */
+}
 .ad-dshbd-prod-item-pr span:last-child{
 
     text-decoration: line-through;
