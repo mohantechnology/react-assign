@@ -1,4 +1,7 @@
-
+.ad-dsbd-st-pd-fl-mn-bx{
+    max-width:1400px;
+    
+}
 .ad-dshbd-prod-fd-mn-bx{ 
     display:flex; 
     border: 1px solid #dfdbdb;
@@ -67,4 +70,49 @@ font-size: 25px;
  
     font-weight: 400;
 
+}
+.ad-dshbd-prod-item-ques-ans-bx{ 
+ 
+    border: 1px solid #d2d2d2;
+
+    padding: 15px 10px;
+    margin: 10px
+
+}
+.ad-dshbd-prod-item-ques-ans-bx > div{
+    /* border:1px dashed black;  */
+    /* display:flex; */
+    margin: 20px 0px;
+   
+
+}
+.ad-dshbd-prod-item-ques-ans-bx > div:first-child{ 
+    margin-top:0px; 
+}
+.ad-dshbd-prod-item-ques-ans-bx > div:last-child{ 
+    margin-bottom:0px; 
+}
+
+.ad-dshbd-prod-item-ques-ans-bx > div >div{
+    /* border:1px dashed blue;  */
+    display:flex;
+    font-weight: 500;
+    font-size: 15px;
+    margin-top:5px;
+    color:black; 
+    
+}
+.ad-dshbd-prod-item-ques-ans-bx > div >div >span:first-child{
+    /* border:1px dashed blue;  */
+    width: 90px;
+    /* border:1px solid yellowgreen;  */
+ 
+    
+}
+.ad-dshbd-prod-item-ques-ans-bx > div >div >span:last-child{
+    /* border:1px dashed blue;  */
+    font-weight: 400;
+    /* border:1px solid black;  */
+ 
+    
 }

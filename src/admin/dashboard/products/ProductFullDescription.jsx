@@ -18,34 +18,8 @@ import { Avatar, Card } from "antd";
 const { Meta } = Card;
 // const queryString = require('query-string');
 
-// ======================||  Production Full Description Box ( image + descritpion + about  ) ||========================
+// ======================||  Production Full Description Box ( image + descritpion   ) ||========================
 function ProductDescriptionBox(props) {
-
-    // About Component 
-  function AboutProduct({dataList}) {
-    console.log("datalist =" , dataList )
-    return (
-      <div className="ad-dshbd-prod-item-dis-ab-bx">
-        <span> About this item</span>
-        <ul>
-          {dataList && dataList.map && dataList.map((item, idx) => {
-      console.log("item =" , item )
-
-            return (
-              <li key={idx}>
-                <span>
-                   {item.title}: 
-                </span>
-                <span>
-                {item.desc}
-                </span> 
-              </li>
-            );
-          })}
-        </ul>
-      </div>
-    );
-  }
   return (
     <div className="ad-dshbd-prod-fd-mn-bx">
       <div className="ad-dshbd-prod-fd-img-bx">
@@ -78,56 +52,90 @@ function ProductDescriptionBox(props) {
   );
 }
 
+// ======================||   About Component   ||========================
+
+function AboutProduct({ dataList }) {
+  return (
+    <div className="ad-dshbd-prod-item-dis-ab-bx">
+      <span> About this item</span>
+      <ul>
+        {dataList &&
+          dataList.map &&
+          dataList.map((item, idx) => {
+            return (
+              <li key={idx}>
+                <span>{item.title}:</span>
+                <span>{item.desc}</span>
+              </li>
+            );
+          })}
+      </ul>
+    </div>
+  );
+}
 // ======================||  Question Answer Component  ||========================
 
-// function QuestionAnswerBox(dataList) {
-//     return (
-//       <div className="ad-dshbd-prod-item-dis-ab-bx">
-//         <span> About this item</span>
-//         <ul>
-//           {dataList.map((item, idx) => {
-//             return (
-//               <li>
-//                 <span>
-//                    {item.tile}: 
-//                 </span>
-//                 <span>
-//                 {item.desc}
-//                 </span> 
-//               </li>
-//             );
-//           })}
-//         </ul>
-//       </div>
-//     );
-//   }
+function QuestionAnswerBox({ dataList }) {
+  function QuestionAnswerBlock(data) {
+    return (
+      <div>
+        <div>
+          <span> Question: </span>
+          <span> {data.question}</span>
+        </div>
+        <div>
+          <span> Answer: </span>
+          <span> {data.answer}</span>
+        </div>
+        <span></span>
+      </div>
+    );
+  }
+  return (
+    <div className="ad-dshbd-prod-item-ques-ans-bx ">
+      {/* <ul> */}
+      {dataList.map((item, idx) => {
+        return <QuestionAnswerBlock {...item} key={idx} />;
+      })}
+      {/* </ul> */}
+    </div>
+  );
+}
 
 export default function ({}) {
   const [pageData, setPageData] = useState([]);
+  const [questionAnswer, setQuestionAnswer] = useState([]);
   const location = useLocation();
   useEffect(() => {
     const parsedQueryData = queryString.parse(location.search);
     if (parsedQueryData.id && productList[parsedQueryData.id]) {
       let data = productList[parsedQueryData.id];
       setPageData(<ProductDescriptionBox {...data} />);
+      // store questionAnser data to be accessbile for QuestionAnsw
+      if (data.quesitionAnswer) {
+        setQuestionAnswer(
+          <QuestionAnswerBox dataList={data.quesitionAnswer} />
+        );
+      }
     } else {
       setPageData(<h1 style={{ marginLeft: "10px" }}> Item Not found </h1>);
     }
   }, []);
 
   return (
-    <div className="ad-dsbd-st-mn-bx">
+    <div className="ad-dsbd-st-mn-bx ad-dsbd-st-pd-fl-mn-bx">
       <p className="ad-dsbd-st-tl"> Products Description</p>
 
       <div className="ad-dsbd-fl-de-bx-bd-par">
         <div className="ad-dsbd-st-item-par-bx">{pageData}</div>
-
-        <p className="ad-dsbd-st-tl">Customer questions & answers</p>
-        <div className="ad-dsbd-st-item-qa--par-bx">
-          {/* <p></p> */}
-          <div> </div>
-        </div>
       </div>
+      <p className="ad-dsbd-st-tl">Customer questions & answers</p>
+      <div className="ad-dsbd-st-item-qa-par-bx">
+        {questionAnswer}
+        <div> </div>
+      </div>
+
+      
     </div>
   );
 }
