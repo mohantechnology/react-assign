@@ -38,6 +38,10 @@ export default function ({ sliderList }) {
     for (let i = 0; i < sliderList.length; i++) {
       if (sliderList[i].link == location.pathname) {
         currentSelectBlock = i;
+      } 
+      else if( sliderList[i].matchedChildRoutes && sliderList[i].matchedChildRoutes.includes(location.pathname)) { 
+        // if pathname matched with any of the given  child routes  then select this block 
+        currentSelectBlock = i;
       }
     }
     handleBlockClick(currentSelectBlock);

@@ -18,10 +18,13 @@ import GavelIcon from "@mui/icons-material/Gavel";
 
 import "./index.css";
 import "./dahboardStats/DashboardStats.css";
- 
+
 // const Login = React.lazy(() => import('../admin/auth/Login'));
-const DashboardStats = React.lazy(() => import('./dahboardStats/DashboardStats'));
-const Products = React.lazy(() => import('./products/Product'));
+const DashboardStats = React.lazy(() =>
+  import("./dahboardStats/DashboardStats")
+);
+const Products = React.lazy(() => import("./products/Product"));
+const ProductFullDescription = React.lazy(() => import("./products/ProductFullDescription"));
 //  src/admin/dashboard/products/Product.css
 export default function () {
   return (
@@ -42,14 +45,17 @@ export default function () {
 
 function DashboardBody() {
   return (
-    <div className="ad-dsbd-view-mn-bx">  
+    <div className="ad-dsbd-view-mn-bx">
       <Suspense fallback={<PageLoader />}>
         <Switch>
-         
-         <Route exact path="/admin/dashboard/statistic" component={DashboardStats} />
-         <Route exact path="/admin/dashboard/product" component={Products} />
- {/* <Route exact path="/admin/register" component={Register} />
-<Route exact path="/*" component={PageNotFound} /> */}
+          <Route
+            exact
+            path="/admin/dashboard/statistic"
+            component={DashboardStats}
+          />
+          <Route exact path="/admin/dashboard/product" component={Products} />
+          <Route exact path="/admin/dashboard/product/full-description" component={ProductFullDescription} />
+     
         </Switch>
       </Suspense>
     </div>
@@ -61,11 +67,15 @@ const sliderList = [
     label: "Dashboard",
     icon: <GridViewIcon />,
     link: "/admin/dashboard/statistic",
+    matchedChildRoutes: [ ] , 
   },
   {
     label: "Products",
     icon: <InventoryIcon />,
     link: "/admin/dashboard/product",
+    matchedChildRoutes: [ 
+      "/admin/dashboard/product/full-description",
+     ] , 
   },
   // {
   //   label: "Shipping",
@@ -76,25 +86,28 @@ const sliderList = [
     label: "Ordered",
     icon: <GavelIcon />,
     link: "/admin/dashboard/order",
+    matchedChildRoutes: [ ] , 
   },
 
   {
     label: "Discount Code",
     icon: <LocalOfferIcon />,
     link: "/admin/dashboard/discount-code",
+    matchedChildRoutes: [ ] , 
   },
 
   {
     label: "Client",
     icon: <PeopleAltIcon />,
     link: "/admin/dashboard/client",
+    matchedChildRoutes: [ ] , 
   },
   // {
   //   label: "Coupon",
   //   icon: <DiscountIcon />,
   //   link: "/admin/dashboard/coupon",
   // },
- 
+
   //  {
   //   label: "Admin",
   //   icon :  <AccessAlarmIcon style={{fontSize:"25px"}}/>,
