@@ -129,7 +129,7 @@ export default function ({}) {
       <div className="ad-dsbd-fl-de-bx-bd-par">
         <div className="ad-dsbd-st-item-par-bx">{pageData}</div>
       </div>
-      <p className="ad-dsbd-st-tl">Customer questions & answers</p>
+      <p className="ad-dsbd-st-tl">Frequently Asked Question</p>
       <div className="ad-dsbd-st-item-qa-par-bx">
         {questionAnswer}
         <div> </div>
