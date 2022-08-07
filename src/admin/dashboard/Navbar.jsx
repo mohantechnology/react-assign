@@ -7,6 +7,8 @@ import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 // import {
 //   Input,
 // } from "reactstrap"
+import { productList } from "./products/Product";
+
 import { AutoComplete, Input } from "antd";
 import "./Navbar.css";
 
@@ -52,7 +54,7 @@ const getRandomInt = (max, min = 0) =>
 const searchResult = (query) => {
   let itemList = testOption.filter((item) => {
     // console.log(item)
-    return item.label.search(query) >= 0;
+    return item.label.search(new RegExp(query, "i")) >= 0;
   });
 
   // console.log( itemList);
@@ -62,12 +64,22 @@ const searchResult = (query) => {
   //  });
 };
 
-const testOption = [
-  { value: "some value2", label: "some label2" },
-  { value: "some value3", label: "some label3" },
-  { value: "some value4", label: "some label4" },
-  { value: "some value5", label: "some label5" },
-  { value: "some value6", label: "some label6" },
-];
+// const testOption = [
+//   { value: "some value2", label: "some label2" },
+//   { value: "some value3", label: "some label3" },
+//   { value: "some value4", label: "some label4" },
+//   { value: "some value5", label: "some label5" },
+//   { value: "some value6", label: "some label6" },
+// ];
 
+let str=" "; 
+const testOption = productList.map((item,idx)=>{
+  str += " "; 
+  item.label =    item.title   ; 
+  item.value =   item.title +  str ; 
+  return item ; 
+})
+
+console.log("testOption" )
+console.log(testOption )
 // export default App;

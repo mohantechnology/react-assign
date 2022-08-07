@@ -4,7 +4,7 @@ import { Route, Switch, NavLink, useLocation } from "react-router-dom";
 import AccessAlarmIcon from "@mui/icons-material/AccessAlarm";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart"; 
 import TableComponent from "../../../component/TableComponent"; 
-
+import DeleteIcon from '@mui/icons-material/Delete';
  
 import { Input, Button, Checkbox } from "antd";
 
@@ -17,67 +17,80 @@ const headCells = [
     id: "emp_id",
     disablePadding: false,
     label: (
-      <p style={{ textAlign: "center", width: "86px", margin: "0" }}>Emp ID</p>
+      <p style={{ textAlign: "center", minWidth: "16px", margin: "0" }}> Id</p>
     ),
+    align:"center",
   },
   {
     id: "emp_name",
     disablePadding: false,
     label: (
-      <p style={{ textAlign: "left", width: "200px", margin: "0" }}>
-        Employee Name
+      <p style={{ textAlign: "center", minWidth: "20px", margin: "0" }}>
+        First Name
       </p>
     ),
+    align:"center",
   },
   {
     id: "role",
     disablePadding: false,
     label: (
-      <p style={{ textAlign: "left", width: "100px", margin: "0" }}>Role</p>
+      <p style={{ textAlign: "center", minWidth: "10px", margin: "0" }}>Last Name</p>
     ),
+    align:"center",
   },
   {
     id: "team_name",
     disablePadding: false,
     label: (
-      <p style={{ textAlign: "left", width: "190px", margin: "0" }}>
-        Team Name
+      <p style={{ textAlign: "center", minWidth: "10px", margin: "0" }}>
+        Email
       </p>
     ),
+    align:"center",
   },
-  {
-    id: "bu_name",
-    disablePadding: false,
-    label: (
-      <p style={{ textAlign: "left", width: "190px", margin: "0" }}>BU Name</p>
-    ),
-  },
+ 
   {
     id: "emp_ass_crs",
     disablePadding: false,
     label: (
-      <p style={{ textAlign: "center", minWidth: "200px", margin: "0" }}>
-        Assigned Course
+      <p style={{ textAlign: "center", minWidth: "20px", margin: "0" }}>
+        Created At
       </p>
     ),
+    align:"center",
+  },
+  {
+    id: "emp_ass_crs_last",
+    disablePadding: false,
+    label: (
+      <p style={{ textAlign: "center", minWidth: "20px", margin: "0" }}>
+        Last Visited At
+      </p>
+    ),
+    align:"center",
   },
   {
     id: "emp_action",
     align: "center",
     disablePadding: false,
     label: (
-      <p style={{ textAlign: "center", minWidth: "100px", margin: "0" }} />
+      <p style={{ textAlign: "center", minWidth: "20px", margin: "0" }}>
+      Actions
+    </p>
     ),
+    align:"center",
   },
 ];
 
-let row_field_data_name = [
-  "emp_id",
-  "emp_nm",
-  "role",
-  "team_name",
-  "buss_name",
-  "emp_ass_crs",
+let rowFieldDataName = [
+  "_id",
+  "firstName",
+  "lastName",
+  "email",
+  "createdAt",
+  "updatedAt",
+  
   "action",
 ];
 
@@ -132,7 +145,7 @@ export default function ({}) {
       key='client_table'
       rows={clientList}
       headCells={headCells}
-      row_field_data_name={row_field_data_name}
+      rowFieldDataName={rowFieldDataName}
     /> );
     
   }, []);
@@ -156,6 +169,7 @@ const clientList = [
     createdAt: "23/01/1990",
     updatedAt: "24/01/1990",
     _id: "0",
+    action : <div className="tb-action-ic-bx"> <DeleteIcon/> </div> 
   },
  
   
@@ -166,6 +180,7 @@ const clientList = [
     createdAt: "23/01/1990",
     updatedAt: "24/01/1990",
     _id: "1",
+    action : <div className="tb-action-ic-bx"> <DeleteIcon/> </div> 
   },
 
   {
@@ -175,6 +190,7 @@ const clientList = [
     createdAt: "23/01/1990",
     updatedAt: "24/01/1990",
     _id: "2",
+    action : <div className="tb-action-ic-bx"> <DeleteIcon/> </div> 
   },
  
 ];
