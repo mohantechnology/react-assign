@@ -60,3 +60,17 @@ text-align: center;
   display:inline-block; 
   text-align:center ;
 } */
+
+.tb-action-ic-bx span{ 
+
+  padding:4px; 
+  /* border:1px solid blue  ;  */
+  cursor: pointer;
+  color:rgba(29, 25, 25, 0.897) ;
+}
+
+.tb-action-ic-bx span:hover{ 
+
+ 
+  color:rgb(97, 92, 92) ;
+}

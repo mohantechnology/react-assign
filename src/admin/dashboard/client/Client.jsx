@@ -6,6 +6,7 @@ import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import TableComponent from "../../../component/TableComponent"; 
 import DeleteIcon from '@mui/icons-material/Delete';
  
+import clientList from "../../../data/client"
 import { Input, Button, Checkbox } from "antd";
 
 import "./Client.css";
@@ -160,39 +161,9 @@ export default function ({}) {
   );
 }
 
-const clientList = [
 
-  {
-    firstName: "John",
-    lastName: "Doe",
-    email: "john@gm.com",
-    createdAt: "23/01/1990",
-    updatedAt: "24/01/1990",
-    _id: "0",
-    action : <div className="tb-action-ic-bx"> <DeleteIcon/> </div> 
-  },
- 
-  
-  {
-    firstName: "Tobn",
-    lastName: "Doe",
-    email: "john@gm.com",
-    createdAt: "23/01/1990",
-    updatedAt: "24/01/1990",
-    _id: "1",
-    action : <div className="tb-action-ic-bx"> <DeleteIcon/> </div> 
-  },
 
-  {
-    firstName: "Mary",
-    lastName: "Doe",
-    email: "john@gm.com",
-    createdAt: "23/01/1990",
-    updatedAt: "24/01/1990",
-    _id: "2",
-    action : <div className="tb-action-ic-bx"> <DeleteIcon/> </div> 
-  },
- 
-];
-
+clientList.map((item,idx)=>{
+  item.action =  <div key={idx} className="tb-action-ic-bx"> <span id={"ad-cl-id-"+ idx}><DeleteIcon/></span>  </div> 
+})
  
