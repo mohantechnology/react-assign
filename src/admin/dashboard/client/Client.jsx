@@ -3,7 +3,7 @@ import { Route, Switch, NavLink, useLocation } from "react-router-dom";
 // import Button from "@mui/material/Button";
 import AccessAlarmIcon from "@mui/icons-material/AccessAlarm";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart"; 
-// import TableComponent from "../../../component/TableComponent"; 
+import TableComponent from "../../../component/TableComponent"; 
 
  
 import { Input, Button, Checkbox } from "antd";
@@ -128,12 +128,12 @@ export default function ({}) {
 
   useEffect(() => {
 
-    // setPageData(   <TableComponent
-    //   key='client_table'
-    //   rows={clientList}
-    //   headCells={headCells}
-    //   row_field_data_name={row_field_data_name}
-    // /> );
+    setPageData(   <TableComponent
+      key='client_table'
+      rows={clientList}
+      headCells={headCells}
+      row_field_data_name={row_field_data_name}
+    /> );
     
   }, []);
 
