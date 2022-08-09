@@ -26,6 +26,7 @@ const DashboardStats = React.lazy(() =>
 const Products = React.lazy(() => import("./products/Product"));
 const ProductFullDescription = React.lazy(() => import("./products/ProductFullDescription"));
 const Client = React.lazy(() => import("./client/Client"));
+const Ordered = React.lazy(() => import("./ordered/Ordered")); 
 //  src/admin/dashboard/products/Product.css
 export default function () {
   return (
@@ -57,6 +58,7 @@ function DashboardBody() {
           <Route exact path="/admin/dashboard/product" component={Products} />
           <Route exact path="/admin/dashboard/product/full-description" component={ProductFullDescription} />
           <Route exact path="/admin/dashboard/client" component={Client} />
+          <Route exact path="/admin/dashboard/order" component={Ordered} />
      
           
         </Switch>

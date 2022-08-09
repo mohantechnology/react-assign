@@ -1,25 +1,53 @@
-import  product from "product";  
+import  product from "./product";  
+import  client from "./client";  
  
-export default [
+const data = [
   {
     productDetail: product.slice(0,2) ,
-    clientDetail: {
-      firstName: "Mary",
-      lastName: "Doe",
-      email: "john@gm.com", 
-      _id: "2",
-
-    },
+    clientDetail: client[0],
     createdAt: "23/01/1990",
     updatedAt: "24/01/1990",
-
-    isDiscounted: true,
-    totalPrice: 13220,
-    discountPrice: 1300,
+   
+    discountCode: "dis-1342" ,
+    totalPrice: 0,
+ 
   },
+
+  {
+    productDetail: product.slice(2,5) ,
+    clientDetail: client[1],
+    createdAt: "23/01/1990",
+    updatedAt: "24/01/1990",
+   
+    discountCode:  "null" ,
+    totalPrice: 0,
+ 
+  },
+  {
+    productDetail: product.slice(4,6) ,
+    clientDetail: client[2],
+    createdAt: "2/01/1990",
+    updatedAt: "23/01/1990",
+   
+    discountCode:  "lamen-1423" ,
+    totalPrice: 0,
+ 
+  },
+
 ]
 
-// console.log( ordered)
+
+ 
+data.map((item )=>{ 
+
+  item.productDetail.map((product )=>{ 
+    item.totalPrice += (product.discountPercentage * product.price)/100; 
+   })
+    ; 
+})
+
+
+export default   data ;  
 
 
 
