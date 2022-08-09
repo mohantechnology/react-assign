@@ -89,7 +89,7 @@ export default function ({}) {
   return (
     <div className="ad-dsbd-st-mn-bx">
       <p className="ad-dsbd-st-tl"> Products</p>
-      <div className="ad-dsbd-st-item-par-bx ad-dsbd-prod-item-par-bx">
+      <div className="ad-dsbd-st-item-par-bx ">
         {pageData}
       </div>
     </div>
