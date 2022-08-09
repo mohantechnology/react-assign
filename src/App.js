@@ -11,7 +11,10 @@ function App() {
     <div  > 
       <BrowserRouter>
       <Switch>
+          {/* */}
           <Route exact path="/admin/*" component={AdminRoute}  />
+
+          <Redirect exact path="/" to="/admin/dashboard/statistic"  /> 
           <Route exact path="/*" component={PageNotFound}  />
           {/* <Route exact path="/*" element={<PageNotFound />} /> */}
           </Switch>
