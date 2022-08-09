@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import { Route, Switch, NavLink, useLocation } from "react-router-dom";
+import React, { useState, useEffect  } from "react";
+import { Route, Switch, NavLink, useLocation ,useHistory} from "react-router-dom";
 // import Button from "@mui/material/Button";
 import AccessAlarmIcon from "@mui/icons-material/AccessAlarm";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
@@ -13,18 +13,22 @@ import { AutoComplete, Input } from "antd";
 import "./Navbar.css";
 
 export default function () {
-  const [options, setOptions] = useState([]);
+  const [options, setOptions] = useState([]); 
+  const history = useHistory();
 
   const handleSearch = (value) => {
     setOptions(value ? searchResult(value) : []);
   };
 
-  const onSelect = (value) => {
-    console.log("onSelect", value);
+  const onSelect = (value,item) => {
+ 
+    history.push(item.link); 
+     
   };
 
   return (
     <div className="ad-nvb-mn-bx">
+      
       <div className="ad-nvb-at-cmp-bx">
         <AutoComplete
           dropdownMatchSelectWidth={252}
@@ -58,10 +62,12 @@ const searchResult = (query) => {
   });
 
   // console.log( itemList);
-  return itemList;
-  //  return itemList.map( (item,idx)=>{
+  
+   itemList.map( (item,idx)=>{
 
-  //  });
+    // item.label = <NavLink className="ad-nvlk" style={{color:"black"}} exact to={item.link }> {item.label}sdf ds </NavLink> 
+   });
+   return itemList;
 };
 
 // const testOption = [
@@ -74,9 +80,12 @@ const searchResult = (query) => {
 
 let str=" "; 
 const testOption = productList.map((item,idx)=>{
+  item.link = "/admin/dashboard/product/full-description?id=" + item._id;
+  // item.navLink = <NavLink className="ad-nvlk" style={{color:"black"}} exact to={item.link }> {item.label}sdf ds </NavLink> 
   str += " "; 
-  item.label =    item.title   ; 
+  item.label =  item.title  ; 
   item.value =   item.title +  str ; 
+  // item.value =  item._id;
   return item ; 
 })
 
