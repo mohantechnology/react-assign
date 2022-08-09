@@ -49,6 +49,16 @@ const headCells = [
     align: "center",
   },
   {
+    id: "no_of",
+    disablePadding: false,
+    label: (
+      <p style={{ textAlign: "center", minWidth: "10px", margin: "0" }}>
+        Total Items
+      </p>
+    ),
+    align: "center",
+  },
+  {
     id: "team_name",
     disablePadding: false,
     label: (
@@ -96,6 +106,7 @@ let rowFieldDataName = [
   "_id",
   "clientName",
   "product",
+  "count",
   "price",
   "discountCode",
   "createdAt",
@@ -166,6 +177,7 @@ const ModalComponent = ({ modalData }) => {
   );
 };
 
+
 export default function ({}) {
   const [pageData, setPageData] = useState([]);
   const [modalBox, seModalBox] = useState([]);
@@ -176,6 +188,8 @@ export default function ({}) {
       item.clientName =
         item.clientDetail.firstName + " " + item.clientDetail.lastName;
       item.price = "$" + item.totalPrice;
+      item.count = item.productDetail.length;
+
       item.product = (
         <p
           className="ad-ord-it-view"
