@@ -107,7 +107,11 @@ export default function ({}) {
   const [questionAnswer, setQuestionAnswer] = useState([]);
   const location = useLocation();
   useEffect(() => {
-    const parsedQueryData = queryString.parse(location.search);
+    createFullDescBox()
+  }, [location]);
+
+function createFullDescBox(){
+  const parsedQueryData = queryString.parse(location.search);
     if (parsedQueryData.id && productList[parsedQueryData.id]) {
       let data = productList[parsedQueryData.id];
       setPageData(<ProductDescriptionBox {...data} />);
@@ -120,7 +124,7 @@ export default function ({}) {
     } else {
       setPageData(<h1 style={{ marginLeft: "10px" }}> Item Not found </h1>);
     }
-  }, []);
+}
 
   return (
     <div className="ad-dsbd-st-mn-bx ad-dsbd-st-pd-fl-mn-bx">

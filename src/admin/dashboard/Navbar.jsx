@@ -56,10 +56,18 @@ const getRandomInt = (max, min = 0) =>
   Math.floor(Math.random() * (max - min + 1)) + min;
 
 const searchResult = (query) => {
-  let itemList = testOption.filter((item) => {
-    // console.log(item)
-    return item.label.search(new RegExp(query, "i")) >= 0;
-  });
+  let itemList  ;
+  try{
+   itemList = testOption.filter((item) => {
+      // console.log(item)
+      return item.label.search(new RegExp(query, "i")) >= 0;
+    });
+  }
+  catch(err){
+    console.error(err); 
+    return [] ;
+  }
+
 
   // console.log( itemList);
   
@@ -78,13 +86,12 @@ const searchResult = (query) => {
 //   { value: "some value6", label: "some label6" },
 // ];
 
-let str=" "; 
+// let str=" "; 
 const testOption = productList.map((item,idx)=>{
   item.link = "/admin/dashboard/product/full-description?id=" + item._id;
-  // item.navLink = <NavLink className="ad-nvlk" style={{color:"black"}} exact to={item.link }> {item.label}sdf ds </NavLink> 
-  str += " "; 
+
   item.label =  item.title  ; 
-  item.value =   item.title +  str ; 
+  item.value =   item.title   ; 
   // item.value =  item._id;
   return item ; 
 })
