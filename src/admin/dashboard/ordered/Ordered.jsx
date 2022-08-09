@@ -117,7 +117,7 @@ let rowFieldDataName = [
 // ===========================|| Product Modal Component ||====================================
 
 const ModalComponent = ({ modalData }) => {
-  const [isModalVisible, setIsModalVisible] = useState(true);
+  const [isModalVisible, setIsModalVisible] = useState(false);
   const [modalElementBox, setModalElementBox] = useState(true);
 
   useEffect(() => {
@@ -131,6 +131,7 @@ const ModalComponent = ({ modalData }) => {
       );
     });
     setModalElementBox(elemList);
+    showModal();
   }, []);
 
   const showModal = () => {
@@ -143,7 +144,11 @@ const ModalComponent = ({ modalData }) => {
 
   const handleCancel = () => {
     setIsModalVisible(false);
+ 
   };
+
+ 
+   
 
   return (
     <>
@@ -155,7 +160,7 @@ const ModalComponent = ({ modalData }) => {
         title="Purchased Items"
         visible={isModalVisible}
         onOk={handleOk}
-        // onCancel={handleCancel}
+        onCancel={handleCancel}
         footer={[
          
           <Button
