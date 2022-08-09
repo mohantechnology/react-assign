@@ -1,26 +1,27 @@
-/* .ad-dsbd-prod-item-par-bx{ 
+/* .ad-dsbd-prod-item-bx{ 
  
 } */
 
-.ad-dsbd-prod-item-par-bx >div {
+.ad-dsbd-prod-item-bx >div {
     margin: 10px 20px 20px 10px;
     /* margin-right: 20px; */
     box-shadow: 2px 2px 6px 1px #7171804d;
 }
 
-.ad-dsbd-prod-item-par-bx >div img{
+.ad-dsbd-prod-item-bx >div img{
     object-fit: contain;
     object-position: center;
     height: 200px;
     margin: auto;
     display: block;
+    /* border:10px solid black;  */
 }
 
-.ad-dsbd-prod-item-par-bx >div .ant-card-meta-description{
+.ad-dsbd-prod-item-bx >div .ant-card-meta-description{
     height: 70px;
 }
  
-.ad-dsbd-prod-item-par-bx .ant-card-cover{
+.ad-dsbd-prod-item-bx .ant-card-cover{
     overflow:hidden; 
   }
 

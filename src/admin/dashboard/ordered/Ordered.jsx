@@ -7,7 +7,9 @@ import TableComponent from "../../../component/TableComponent";
 import DeleteIcon from "@mui/icons-material/Delete";
 
 import orderedList from "../../../data/ordered";
-import { Input, Button, Checkbox } from "antd";
+import { ProductBox } from "../products/Product";
+
+import { Input, Button, Checkbox, Modal } from "antd";
 
 import "./Ordered.css";
 
@@ -22,7 +24,7 @@ const headCells = [
     id: "_id",
     disablePadding: false,
     label: (
-      <p style={{ textAlign: "center", minWidth: "16px", margin: "0" }}> Id</p>
+      <p style={{ textAlign: "center", minWidth: "16px", margin: "0" }}> No.</p>
     ),
     align: "center",
   },
@@ -101,8 +103,72 @@ let rowFieldDataName = [
   "action",
 ];
 
+// ===========================|| Product Modal Component ||====================================
+
+const ModalComponent = ({ modalData }) => {
+  const [isModalVisible, setIsModalVisible] = useState(true);
+  const [modalElementBox, setModalElementBox] = useState(true);
+
+  useEffect(() => {
+    let elemList = modalData.productDetail.map((item, idx) => {
+      item.link = "/admin/dashboard/product/full-description?id=" + item._id;
+      return (
+        // <div className="ad-ord-pro-bx" key={idx}>
+         <ProductBox   key={item._id}
+            {...item}/> 
+        // </div>
+      );
+    });
+    setModalElementBox(elemList);
+  }, []);
+
+  const showModal = () => {
+    setIsModalVisible(true);
+  };
+
+  const handleOk = () => {
+    setIsModalVisible(false);
+  };
+
+  const handleCancel = () => {
+    setIsModalVisible(false);
+  };
+
+  return (
+    <>
+    <div className="ad-md-mn-bx" >
+      <Modal
+       style={{
+        top: "5vh",
+      }}
+        title="Purchased Items"
+        visible={isModalVisible}
+        onOk={handleOk}
+        // onCancel={handleCancel}
+        footer={[
+         
+          <Button
+            key="link" 
+            type="primary" 
+            onClick={handleOk}
+          >
+           Ok
+          </Button>,
+        ]}
+      >
+         <div className="ad-md-in-bx" >
+        {modalElementBox}
+      </div>
+
+      </Modal>
+      </div>
+    </>
+  );
+};
+
 export default function ({}) {
   const [pageData, setPageData] = useState([]);
+  const [modalBox, seModalBox] = useState([]);
 
   useEffect(() => {
     orderedList.map((item, idx) => {
@@ -135,9 +201,11 @@ export default function ({}) {
 
   function handleViewclick(e, currentIndex) {
     console.log(currentIndex);
+    seModalBox(<ModalComponent   key={Math.random()} modalData={orderedList[currentIndex]} />);
   }
   return (
     <div className="ad-dsbd-st-mn-bx">
+      {modalBox}
       <p className="ad-dsbd-st-tl"> Ordered</p>
       <div className="ad-dsbd-st-item-par-bx ad-dsbd-prod-item-par-bx">
         {pageData}

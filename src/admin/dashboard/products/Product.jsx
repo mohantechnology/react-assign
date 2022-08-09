@@ -19,7 +19,7 @@ const { Meta } = Card;
 function ProductBox(props) {
   console.log(props);
   return (
-    <div className="">
+    <div className="ad-dsbd-prod-item-bx">
       <Card
         style={{
           width: 300,
@@ -98,4 +98,4 @@ export default function ({}) {
 
  
 
-export { productList };
+export { productList , ProductBox };
