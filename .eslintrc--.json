@@ -13,12 +13,12 @@
     "rules": {
         "react/prop-types": 0,
         "indent": [
-            "error",
+            "warn",
             2
         ],
         "linebreak-style": 1,
         "quotes": [
-            "error",
+            "warn",
             "double"
         ],
         // suppress errors for missing 'import React' in files
