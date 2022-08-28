@@ -3,7 +3,7 @@ import { Route, Switch, Redirect  , BrowserRouter } from "react-router-dom";
 import PageNotFound from "./component/PageNotFound";
 import AdminRoute from "./routes/AdminRoute";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import 'antd/dist/antd.css';
+import 'antd/dist/antd.min.css';
 
 
 function App() {
@@ -16,7 +16,7 @@ function App() {
 
           <Redirect exact path="/" to="/admin/dashboard/statistic"  /> 
           <Route exact path="/*" component={PageNotFound}  />
-          {/* <Route exact path="/*" element={<PageNotFound />} /> */}
+          <Route exact path="/*" element={<PageNotFound />} />
           </Switch>
           </BrowserRouter>
     </div>
