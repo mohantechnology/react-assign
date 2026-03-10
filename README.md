@@ -1,15 +1,14 @@
-A Simple E-commerce Dashboard  build using React.js with following pages 
-  - Sales statistics 
-  - Search Product 
-  - Products list 
-  - Product full details 
-  - Clients and Order list 
+# A Simple E-commerce Dashboard
 
+A simple E-commerce Dashboard built using React.js with the following pages:
+
+- Sales statistics
+- Search Product
+- Products list
+- Product full details
+- Clients and Order list
 
 https://github.com/user-attachments/assets/f6d0f52a-e2de-452e-b8df-91a61017de92
-
-
-
 
 
 
